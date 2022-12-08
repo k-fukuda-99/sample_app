@@ -1,0 +1,18 @@
+<h2>タイトル</h2>
+
+<!-- @listはlists_controllerのshowアクションで定義したインスタンス変数 -->
+<p><%= @list.title %></p>
+
+<h2>本文</h2>
+<p><%= @list.body %></p>
+
+<p>画像</p>
+  <!--attached?は、画像が存在していればtrue、存在していなければfalseを返します。-->
+  <% if @list.image.attached? %>
+    <%= image_tag @list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
+
+<!-- 詳細画面（show.html.erbファイル）に、編集画面へ遷移するリンクを設定します。 -->
+<%= link_to "編集", edit_list_path(@list.id) %>
