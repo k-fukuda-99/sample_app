@@ -2,7 +2,7 @@
 
 <!-- 編集したい投稿データをフォームに代入する場合、その都度タイトルや内容を指定する必要がある。
 しかし、form_withを利用すると、インスタンス変数を渡すだけで、インスタンス変数内のモデルを解読して、投稿したタイトルと内容を代入してくれる。-->
-<%= form_with model: @list, url: update_list_path(@list.id), method: :patch do |f| %>
+<%= form_with model: @list, method: :patch do |f| %>
 
   <h4>タイトル</h4>
   <%= f.text_field :title %>

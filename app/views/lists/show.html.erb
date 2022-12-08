@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <h2>タイトル</h2>
 
 <!-- @listはlists_controllerのshowアクションで定義したインスタンス変数 -->
@@ -16,3 +20,6 @@
 
 <!-- 詳細画面（show.html.erbファイル）に、編集画面へ遷移するリンクを設定します。 -->
 <%= link_to "編集", edit_list_path(@list.id) %>
+<!-- Getメソッドの場合はmethodオプションを指定しなくてもいいが、update destroy createをしているする場合はURLに対してHTTPメソッドを指定しないといけない-->
+<%= link_to "削除", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
